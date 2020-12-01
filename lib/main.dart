@@ -83,6 +83,7 @@ class _ImageContainerState extends State<ImageContainer> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width / 1,
+                  padding: EdgeInsets.only(top: 5.0),
                   child: Row(
                     children: [
                       RaisedButton(
@@ -121,27 +122,40 @@ class _ImageContainerState extends State<ImageContainer> {
                   ),
                 ),
                 Container(
+                  height: MediaQuery.of(context).size.width * ((3 / 4) / 1),
                   padding: EdgeInsets.only(top: 10.0),
-                  height: MediaQuery.of(context).size.width / 1,
-                  child: Expanded(
-                    child: GridView.builder(
-                      itemCount: urlImg.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 1,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 1),
-                          child: Image.network(
-                            urlImg[index],
-                            fit: BoxFit.cover,
-                          ),
-                        );
-                      },
+                  child: GridView.builder(
+                    itemCount: urlImg.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 1,
                     ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 1),
+                        child: Image.network(
+                          urlImg[index],
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    },
                   ),
                 ),
+                SizedBox(height: 15.0),
+                Container(
+                  width: MediaQuery.of(context).size.width * (2 / 3),
+                  decoration: BoxDecoration(
+                    color: Color(0xff046327),
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 3.0),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text('Today tracking'),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text('Tracking your adventures'),
               ],
             ),
           ),
