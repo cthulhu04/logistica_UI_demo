@@ -151,7 +151,10 @@ class _ImageContainerState extends State<ImageContainer> {
                   padding: EdgeInsets.symmetric(vertical: 3.0),
                   child: FlatButton(
                     onPressed: () {},
-                    child: Text('Today tracking'),
+                    child: Text(
+                      'Today tracking',
+                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                    ),
                   ),
                 ),
                 SizedBox(height: 10.0),
